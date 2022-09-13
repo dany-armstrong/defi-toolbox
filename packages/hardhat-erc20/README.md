@@ -3,7 +3,7 @@
 Example:
 
 ```typescript
-import { deployErc20Token } from '@thenextblock/hardhat-erc20';
+import { deployErc20Token } from '@dany-armstrong/hardhat-erc20';
 ...
 const abc = await deployErc20Token({
   name: 'ABC Token',

@@ -1,12 +1,12 @@
 {
-  "name": "@thenextblock/hardhat-erc20",
+  "name": "@dany-armstrong/hardhat-erc20",
   "description": "ERC-20 token deployment plugin for Hardhat",
-  "version": "0.0.5",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/thenextblock/DefiToolbox.git"
+    "url": "git+ssh://git@github.com/dany-armstrong/DefiToolbox.git"
   },
-  "author": "thenextblock",
+  "author": "dany-armstrong",
   "license": "MIT",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -21,7 +21,9 @@
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "test": "mocha --exit --recursive 'test/**/*.test.ts'",
     "build": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "postbuild": "npm run copy-files",
+    "copy-files": "copyfiles -u 1 typechain/*.d.ts dist/typechain"
   },
   "files": [
     "dist/src",
@@ -41,6 +43,7 @@
     "@types/fs-extra": "^9.0.12",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.6.1",
+    "copyfiles": "^2.4.1",
     "hardhat": "^2.6.0",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1",
@@ -66,9 +69,9 @@
     "hardhat": "^2.6.0"
   },
   "bugs": {
-    "url": "https://github.com/thenextblock/DefiToolbox/issues"
+    "url": "https://github.com/dany-armstrong/DefiToolbox/issues"
   },
-  "homepage": "https://github.com/thenextblock/DefiToolbox/tree/monorepo/packages/hardhat-erc20-plugin#readme",
+  "homepage": "https://github.com/dany-armstrong/DefiToolbox/tree/monorepo/packages/hardhat-erc20-plugin#readme",
   "directories": {
     "test": "test",
     "example": "scripts"
